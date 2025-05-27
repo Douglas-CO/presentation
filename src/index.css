@@ -1,0 +1,39 @@
+.spacer {
+  flex: 1;
+}
+
+.page-title__small {
+  font-size: 16px !important;
+  /* color: #202326c3 !important; */
+}
+
+.cliente__page--title {
+  font-size: 16px !important;
+}
+
+
+/* Map Polygon */
+.sr-only {
+  display: none;
+}
+
+/* calendar */
+.rbc-time-slot {
+  min-height: 72px !important;
+}
+
+.MuiTableCell-body {
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+}
+
+/* table links */
+.table__link {
+  text-decoration: none !important;
+  color: inherit !important;
+  cursor: pointer;
+}
+
+.table__link:hover {
+  text-decoration: underline !important;
+}
