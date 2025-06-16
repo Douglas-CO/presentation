@@ -71,27 +71,27 @@ export default function HeroSection() {
                 </Box>
               </Typography>
               <Box sx={{ display: "flex", gap: 3, flexWrap: "wrap" }}>
-                <a
-                  href="https://firebasestorage.googleapis.com/v0/b/douglascoronado-d21f5.appspot.com/o/Curriculum%2FCV%20Douglas%20Coronado.pdf?alt=media&token=27d982da-0c7f-4326-b53e-5035cfd4b51d"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ textDecoration: "none" }}
+                <Button
+                  variant="contained"
+                  size="large"
+                  startIcon={<DownloadIcon />}
+                  onClick={() =>
+                    window.open(
+                      "https://firebasestorage.googleapis.com/v0/b/douglascoronado-d21f5.appspot.com/o/Curriculum%2FCV%20Douglas%20Coronado.pdf?alt=media&token=27d982da-0c7f-4326-b53e-5035cfd4b51d",
+                      "_blank",
+                      "noopener,noreferrer"
+                    )
+                  }
+                  sx={{
+                    backgroundColor: "primary.main",
+                    color: "white",
+                    px: 4,
+                    py: 2,
+                    fontSize: "1.1rem",
+                  }}
                 >
-                  <Button
-                    variant="contained"
-                    size="large"
-                    startIcon={<DownloadIcon />}
-                    sx={{
-                      backgroundColor: "primary.main",
-                      color: "white",
-                      px: 4,
-                      py: 2,
-                      fontSize: "1.1rem",
-                    }}
-                  >
-                    Download CV
-                  </Button>
-                </a>
+                  Download CV
+                </Button>
               </Box>
             </Box>
           </Grid>
