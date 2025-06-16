@@ -1,7 +1,14 @@
-"use client"
-import { Box, Container, Typography, Button, Avatar, Grid } from "@mui/material"
-import { Download as DownloadIcon } from "@mui/icons-material"
-import creator from '../img/yo.jpg'
+"use client";
+import {
+  Box,
+  Container,
+  Typography,
+  Button,
+  Avatar,
+  Grid,
+} from "@mui/material";
+import { Download as DownloadIcon } from "@mui/icons-material";
+import creator from "../img/yo.jpg";
 
 export default function HeroSection() {
   return (
@@ -56,25 +63,35 @@ export default function HeroSection() {
               >
                 Douglas Matias Coronado Ortiz
                 <br />
-                <Box component="span" sx={{ color: "primary.main", fontWeight: 500 }}>
+                <Box
+                  component="span"
+                  sx={{ color: "primary.main", fontWeight: 500 }}
+                >
                   Desarrollador Fullstack
                 </Box>
               </Typography>
               <Box sx={{ display: "flex", gap: 3, flexWrap: "wrap" }}>
-                <Button
-                  variant="contained"
-                  size="large"
-                  startIcon={<DownloadIcon />}
-                  sx={{
-                    backgroundColor: "primary.main",
-                    color: "white",
-                    px: 4,
-                    py: 2,
-                    fontSize: "1.1rem",
-                  }}
+                <a
+                  href="https://firebasestorage.googleapis.com/v0/b/douglascoronado-d21f5.appspot.com/o/Curriculum%2FCV%20Douglas%20Coronado.pdf?alt=media&token=27d982da-0c7f-4326-b53e-5035cfd4b51d"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ textDecoration: "none" }}
                 >
-                  Download CV
-                </Button>
+                  <Button
+                    variant="contained"
+                    size="large"
+                    startIcon={<DownloadIcon />}
+                    sx={{
+                      backgroundColor: "primary.main",
+                      color: "white",
+                      px: 4,
+                      py: 2,
+                      fontSize: "1.1rem",
+                    }}
+                  >
+                    Download CV
+                  </Button>
+                </a>
               </Box>
             </Box>
           </Grid>
@@ -128,5 +145,5 @@ export default function HeroSection() {
         </Grid>
       </Container>
     </Box>
-  )
+  );
 }
