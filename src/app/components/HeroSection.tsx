@@ -1,3 +1,5 @@
+/* eslint-disable react/react-in-jsx-scope */
+/* eslint-disable react/prop-types */
 "use client";
 import {
   Box,
@@ -10,7 +12,11 @@ import {
 import { Download as DownloadIcon } from "@mui/icons-material";
 import creator from "../img/yo.jpg";
 
-export default function HeroSection() {
+export type HeroSectionProps = {
+  isMobile: boolean;
+};
+
+const HeroSection: React.FC<HeroSectionProps> = ({ isMobile }) => {
   return (
     <Box
       sx={{
@@ -30,77 +36,11 @@ export default function HeroSection() {
           <Grid item xs={12} md={6}>
             <Box
               sx={{
-                animation: "fadeInUp 1s ease-out",
-                "@keyframes fadeInUp": {
-                  "0%": { opacity: 0, transform: "translateY(40px)" },
-                  "100%": { opacity: 1, transform: "translateY(0)" },
-                },
-              }}
-            >
-              <Typography
-                variant="h1"
-                sx={{
-                  mb: 3,
-                  background: `linear-gradient(135deg, primary.main 0%, secondary.main 100%)`,
-                  backgroundClip: "text",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                }}
-              >
-                Douglas Matias
-                <br />
-                Coronado Ortiz
-              </Typography>
-
-              <Typography
-                variant="h4"
-                sx={{
-                  mb: 4,
-                  color: "text.secondary",
-                  fontWeight: 300,
-                  lineHeight: 1.4,
-                }}
-              >
-                Douglas Matias Coronado Ortiz
-                <br />
-                <Box
-                  component="span"
-                  sx={{ color: "primary.main", fontWeight: 500 }}
-                >
-                  Desarrollador Fullstack
-                </Box>
-              </Typography>
-              <Box sx={{ display: "flex", gap: 3, flexWrap: "wrap" }}>
-                <Button
-                  variant="contained"
-                  size="large"
-                  startIcon={<DownloadIcon />}
-                  onClick={() =>
-                    window.open(
-                      "https://firebasestorage.googleapis.com/v0/b/douglascoronado-d21f5.appspot.com/o/Curriculum%2FCV%20Douglas%20Coronado.pdf?alt=media&token=27d982da-0c7f-4326-b53e-5035cfd4b51d",
-                      "_blank",
-                      "noopener,noreferrer"
-                    )
-                  }
-                  sx={{
-                    backgroundColor: "primary.main",
-                    color: "white",
-                    px: 4,
-                    py: 2,
-                    fontSize: "1.1rem",
-                  }}
-                >
-                  Download CV
-                </Button>
-              </Box>
-            </Box>
-          </Grid>
-
-          <Grid item xs={12} md={6}>
-            <Box
-              sx={{
                 display: "flex",
                 justifyContent: "center",
+                alignItems: "center",
+                height: "50%",
+                minHeight: 400,
                 animation: "fadeInScale 1.2s ease-out 0.3s both",
                 "@keyframes fadeInScale": {
                   "0%": { opacity: 0, transform: "scale(0.8)" },
@@ -142,8 +82,70 @@ export default function HeroSection() {
               </Box>
             </Box>
           </Grid>
+          <Grid item xs={12} md={6}>
+            <Box
+              sx={{
+                animation: "fadeInUp 1s ease-out",
+                "@keyframes fadeInUp": {
+                  "0%": { opacity: 0, transform: "translateY(40px)" },
+                  "100%": { opacity: 1, transform: "translateY(0)" },
+                },
+              }}
+            >
+              <Typography
+                variant="h4"
+                sx={{
+                  mb: 4,
+                  color: "text.secondary",
+                  fontWeight: 300,
+                  lineHeight: 1.4,
+                }}
+              >
+                Douglas Matias Coronado Ortiz
+                <br />
+                <Box
+                  component="span"
+                  sx={{ color: "primary.main", fontWeight: 500 }}
+                >
+                  Desarrollador Fullstack
+                </Box>
+              </Typography>
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: isMobile ? null : "center", // 👈 Centra horizontalmente
+                  gap: 3,
+                  flexWrap: "wrap",
+                }}
+              >
+                <Button
+                  variant="contained"
+                  size="large"
+                  startIcon={<DownloadIcon />}
+                  onClick={() =>
+                    window.open(
+                      "https://firebasestorage.googleapis.com/v0/b/douglascoronado-d21f5.appspot.com/o/Curriculum%2FCV%20Douglas%20Coronado.pdf?alt=media&token=27d982da-0c7f-4326-b53e-5035cfd4b51d",
+                      "_blank",
+                      "noopener,noreferrer"
+                    )
+                  }
+                  sx={{
+                    backgroundColor: "primary.main",
+                    color: "white",
+                    px: 4,
+                    py: 2,
+                    fontSize: "1.1rem",
+                  }}
+                >
+                  Download CV
+                </Button>
+              </Box>
+            </Box>
+          </Grid>
         </Grid>
       </Container>
     </Box>
   );
-}
+};
+
+export default HeroSection;

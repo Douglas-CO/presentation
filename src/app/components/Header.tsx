@@ -1,31 +1,46 @@
-"use client"
+"use client";
 
-import type React from "react"
-import { useState } from "react"
-import { AppBar, Toolbar, Typography, Button, Box, IconButton, Menu, MenuItem, Avatar } from "@mui/material"
-import { Palette as PaletteIcon } from "@mui/icons-material"
-import type { ThemeMode } from "../hooks/useTheme"
+import type React from "react";
+import { useState } from "react";
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Button,
+  Box,
+  IconButton,
+  Menu,
+  MenuItem,
+  Avatar,
+} from "@mui/material";
+import { Palette as PaletteIcon } from "@mui/icons-material";
+import type { ThemeMode } from "../hooks/useTheme";
 
-interface HeaderProps {
-  currentTheme: ThemeMode
-  onThemeChange: (theme: ThemeMode) => void
-}
+export type HeaderProps = {
+  currentTheme: ThemeMode;
+  onThemeChange: (theme: ThemeMode) => void;
+  isMobile: boolean;
+};
 
-export default function Header({ currentTheme, onThemeChange }: HeaderProps) {
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
+const Header: React.FC<HeaderProps> = ({
+  currentTheme,
+  onThemeChange,
+  isMobile,
+}) => {
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
   const handleThemeMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget)
-  }
+    setAnchorEl(event.currentTarget);
+  };
 
   const handleThemeMenuClose = () => {
-    setAnchorEl(null)
-  }
+    setAnchorEl(null);
+  };
 
   const handleThemeChange = (theme: ThemeMode) => {
-    onThemeChange(theme)
-    handleThemeMenuClose()
-  }
+    onThemeChange(theme);
+    handleThemeMenuClose();
+  };
 
   const themeOptions = [
     { value: "minimal", label: "Minimal", color: "#000000" },
@@ -33,7 +48,7 @@ export default function Header({ currentTheme, onThemeChange }: HeaderProps) {
     { value: "nature", label: "Nature", color: "#2d5016" },
     { value: "monochrome", label: "Monochrome", color: "#1a1a1a" },
     { value: "warm", label: "Warm", color: "#d97706" },
-  ]
+  ];
 
   return (
     <AppBar
@@ -81,71 +96,72 @@ export default function Header({ currentTheme, onThemeChange }: HeaderProps) {
             DOUGLAS CORONADO
           </Typography>
         </Box>
-
-        <Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            gap: 1,
-            animation: "fadeInRight 1s ease-out",
-            "@keyframes fadeInRight": {
-              "0%": { opacity: 0, transform: "translateX(20px)" },
-              "100%": { opacity: 1, transform: "translateX(0)" },
-            },
-          }}
-        >
-          <Button
-            color="inherit"
-            href="#about"
+        {isMobile ? (
+          <Box
             sx={{
-              color: "text.primary",
-              fontWeight: 500,
-              "&:hover": {
-                backgroundColor: "rgba(0,0,0,0.04)",
+              display: "flex",
+              alignItems: "center",
+              gap: 1,
+              animation: "fadeInRight 1s ease-out",
+              "@keyframes fadeInRight": {
+                "0%": { opacity: 0, transform: "translateX(20px)" },
+                "100%": { opacity: 1, transform: "translateX(0)" },
               },
             }}
           >
-            ACERCA
-          </Button>
-          <Button
-            color="inherit"
-            href="#expertise"
-            sx={{
-              color: "text.primary",
-              fontWeight: 500,
-              "&:hover": {
-                backgroundColor: "rgba(0,0,0,0.04)",
-              },
-            }}
-          >
-            EXPERIENCIA
-          </Button>
-          <Button
-            color="inherit"
-            href="#vision"
-            sx={{
-              color: "text.primary",
-              fontWeight: 500,
-              "&:hover": {
-                backgroundColor: "rgba(0,0,0,0.04)",
-              },
-            }}
-          >
-            VISION
-          </Button>
-          <IconButton
-            onClick={handleThemeMenuOpen}
-            sx={{
-              ml: 1,
-              color: "primary.main",
-              "&:hover": {
-                backgroundColor: "rgba(0,0,0,0.04)",
-              },
-            }}
-          >
-            <PaletteIcon />
-          </IconButton>
-        </Box>
+            <Button
+              color="inherit"
+              href="#about"
+              sx={{
+                color: "text.primary",
+                fontWeight: 500,
+                "&:hover": {
+                  backgroundColor: "rgba(0,0,0,0.04)",
+                },
+              }}
+            >
+              ACERCA
+            </Button>
+            <Button
+              color="inherit"
+              href="#expertise"
+              sx={{
+                color: "text.primary",
+                fontWeight: 500,
+                "&:hover": {
+                  backgroundColor: "rgba(0,0,0,0.04)",
+                },
+              }}
+            >
+              EXPERIENCIA
+            </Button>
+            <Button
+              color="inherit"
+              href="#vision"
+              sx={{
+                color: "text.primary",
+                fontWeight: 500,
+                "&:hover": {
+                  backgroundColor: "rgba(0,0,0,0.04)",
+                },
+              }}
+            >
+              VISION
+            </Button>
+            <IconButton
+              onClick={handleThemeMenuOpen}
+              sx={{
+                ml: 1,
+                color: "primary.main",
+                "&:hover": {
+                  backgroundColor: "rgba(0,0,0,0.04)",
+                },
+              }}
+            >
+              <PaletteIcon />
+            </IconButton>
+          </Box>
+        ) : null}
 
         <Menu
           anchorEl={anchorEl}
@@ -186,5 +202,7 @@ export default function Header({ currentTheme, onThemeChange }: HeaderProps) {
         </Menu>
       </Toolbar>
     </AppBar>
-  )
-}
+  );
+};
+
+export default Header;

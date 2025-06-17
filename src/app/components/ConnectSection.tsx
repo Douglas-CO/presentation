@@ -1,18 +1,13 @@
+/* eslint-disable react/react-in-jsx-scope */
 "use client";
 import {
-  Box,
-  Container,
-  Typography,
-  Grid,
-  Card,
-} from "@mui/material";
-import {
   Email as EmailIcon,
-  LinkedIn as LinkedInIcon,
   GitHub as GitHubIcon,
   WhatsApp as WhatsAppIcon,
+  LinkedIn as LinkedInIcon,
 } from "@mui/icons-material";
 import { toast } from "react-toastify";
+import { Box, Grid, Card, Container, Typography } from "@mui/material";
 
 const contactMethods = [
   {
