@@ -3,7 +3,6 @@
 import {
   Email as EmailIcon,
   GitHub as GitHubIcon,
-  WhatsApp as WhatsAppIcon,
   LinkedIn as LinkedInIcon,
 } from "@mui/icons-material";
 import { toast } from "react-toastify";
@@ -28,15 +27,14 @@ const contactMethods = [
     value: "https://github.com/Douglas-CO",
     page: true,
   },
-  {
-    icon: <WhatsAppIcon />,
-    title: "WhatsApp",
-    value: "https://wa.me/593998563068",
-    page: true,
-  },
 ];
 
-export default function ConnectSection() {
+export type ConnectSectionProps = {
+  isMobile: boolean;
+};
+
+// eslint-disable-next-line react/prop-types
+const ConnectSection: React.FC<ConnectSectionProps> = ({ isMobile }) => {
   const SaveContact = (contact: string, isPage: boolean) => {
     if (isPage) {
       window.open(contact, "_blank", "noopener,noreferrer");
@@ -78,9 +76,9 @@ export default function ConnectSection() {
             >
               Contacto
             </Typography>
-            <Grid container spacing={2}>
+            <Grid container spacing={3}>
               {contactMethods.map((method, index) => (
-                <Grid item xs={6} key={index}>
+                <Grid item xs={isMobile ? 4 : 12} key={index}>
                   <Box
                     onClick={() => SaveContact(method.value, method.page)}
                     sx={{
@@ -144,4 +142,6 @@ export default function ConnectSection() {
       </Container>
     </Box>
   );
-}
+};
+
+export default ConnectSection;

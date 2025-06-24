@@ -44,7 +44,7 @@ const Page: React.FC<PageProps> = ({ isMobile }) => {
         <AboutSection isMobile={isMobile} />
         <ExpertiseSection isMobile={isMobile} />
         <VisionSection isMobile={isMobile} />
-        <ConnectSection />
+        <ConnectSection isMobile={isMobile} />
       </Box>
     </ThemeProvider>
   );
