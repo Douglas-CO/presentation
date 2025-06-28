@@ -124,7 +124,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ isMobile }) => {
                   startIcon={<DownloadIcon />}
                   onClick={() =>
                     window.open(
-                      "https://firebasestorage.googleapis.com/v0/b/douglascoronado-d21f5.appspot.com/o/Curriculum%2FCV%20Douglas%20Coronado.pdf?alt=media&token=27d982da-0c7f-4326-b53e-5035cfd4b51d",
+                      "https://firebasestorage.googleapis.com/v0/b/douglascoronado-d21f5.appspot.com/o/Curriculum%2FDouglas%20Coronado%20CV.pdf?alt=media&token=0ce30266-e2ff-43a1-a325-7fb98385b996",
                       "_blank",
                       "noopener,noreferrer"
                     )
@@ -137,7 +137,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ isMobile }) => {
                     fontSize: "1.1rem",
                   }}
                 >
-                  Download CV
+                  Descargar CV
                 </Button>
               </Box>
             </Box>
