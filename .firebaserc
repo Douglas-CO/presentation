@@ -1,5 +1,7 @@
 {
   "projects": {
     "default": "douglascoronado-d21f5"
-  }
+  },
+  "targets": {},
+  "etags": {}
 }
