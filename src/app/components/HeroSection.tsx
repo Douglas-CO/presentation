@@ -124,7 +124,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ isMobile }) => {
                   startIcon={<DownloadIcon />}
                   onClick={() =>
                     window.open(
-                      "https://firebasestorage.googleapis.com/v0/b/douglascoronado-d21f5.appspot.com/o/Curriculum%2FDouglas%20Coronado%20CV.pdf?alt=media&token=0ce30266-e2ff-43a1-a325-7fb98385b996",
+                      "https://firebasestorage.googleapis.com/v0/b/douglascoronado-d21f5.appspot.com/o/Curriculum%2FDouglas%20Coronado%20CV%202025.pdf?alt=media&token=85ba5cac-2a6a-4b7e-a4d0-49b5f1270e50",
                       "_blank",
                       "noopener,noreferrer"
                     )
