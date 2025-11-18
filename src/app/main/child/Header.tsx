@@ -6,7 +6,6 @@ import {
   AppBar,
   Toolbar,
   Typography,
-  Button,
   Box,
   IconButton,
   Menu,
@@ -14,7 +13,8 @@ import {
   Avatar,
 } from "@mui/material";
 import { Palette as PaletteIcon } from "@mui/icons-material";
-import type { ThemeMode } from "../hooks/useTheme";
+import { CustomButton } from "@/components";
+import { ThemeMode } from "@/constant";
 
 export type HeaderProps = {
   currentTheme: ThemeMode;
@@ -109,7 +109,8 @@ const Header: React.FC<HeaderProps> = ({
               },
             }}
           >
-            <Button
+            <CustomButton
+              label="ACERCA"
               color="inherit"
               href="#about"
               sx={{
@@ -119,10 +120,9 @@ const Header: React.FC<HeaderProps> = ({
                   backgroundColor: "rgba(0,0,0,0.04)",
                 },
               }}
-            >
-              ACERCA
-            </Button>
-            <Button
+            />
+            <CustomButton
+              label="EXPERIENCIA"
               color="inherit"
               href="#expertise"
               sx={{
@@ -132,10 +132,9 @@ const Header: React.FC<HeaderProps> = ({
                   backgroundColor: "rgba(0,0,0,0.04)",
                 },
               }}
-            >
-              EXPERIENCIA
-            </Button>
-            <Button
+            />
+            <CustomButton
+              label="VISION"
               color="inherit"
               href="#vision"
               sx={{
@@ -145,9 +144,7 @@ const Header: React.FC<HeaderProps> = ({
                   backgroundColor: "rgba(0,0,0,0.04)",
                 },
               }}
-            >
-              VISION
-            </Button>
+            />
             <IconButton
               onClick={handleThemeMenuOpen}
               sx={{

@@ -1,0 +1,6 @@
+export {default as AboutSection} from './AboutSection'
+export {default as ConnectSection} from './ConnectSection'
+export {default as ExpertiseSection} from './ExpertiseSection'
+export {default as Header} from './Header'
+export {default as HeroSection} from './HeroSection'
+export {default as VisionSection} from './VisionSection'

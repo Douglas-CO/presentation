@@ -2,8 +2,8 @@
 
 import { useState, useMemo } from "react"
 import { createTheme, ThemeOptions, type Theme } from "@mui/material/styles"
+import { ThemeMode } from "@/constant"
 
-export type ThemeMode = "minimal" | "luxury" | "nature" | "monochrome" | "warm"
 
 export const useTheme = () => {
   const [currentTheme, setCurrentTheme] = useState<ThemeMode>("minimal")
