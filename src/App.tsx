@@ -1,26 +1,34 @@
 /* eslint-disable react/react-in-jsx-scope */
-import "react-toastify/dist/ReactToastify.css";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { NuqsAdapter } from "nuqs/adapters/react";
 import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useRoutes } from "react-router-dom";
 
-import Page from "./app/page";
-import { useIsMediaQuery } from "./hooks/useIsMediaQuery";
+import { RTL } from "./layouts";
+import { AppRouter } from "./router";
+import { useUiStore } from "./store";
+import { ThemeSettings } from "./theme";
+import { ThemeProvider } from "@mui/material";
+
+const queryClient = new QueryClient();
 
 function App() {
-  const isMobile = useIsMediaQuery("sm");
+  const routing = useRoutes(AppRouter);
+  const theme = ThemeSettings();
+  const customizer = useUiStore((state) => state.state);
+
   return (
-    <>
-      <Page isMobile={!isMobile} />
-      <ToastContainer
-        position="top-right"
-        autoClose={3000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        pauseOnHover
-        draggable
-        theme="light"
-      />
-    </>
+    <NuqsAdapter>
+      <QueryClientProvider client={queryClient}>
+        <ThemeProvider theme={theme}>
+          <RTL direction={customizer.activeDir}>
+            {routing}
+            <ToastContainer />
+          </RTL>
+        </ThemeProvider>
+      </QueryClientProvider>
+    </NuqsAdapter>
   );
 }
 

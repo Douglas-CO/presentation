@@ -1,10 +1,9 @@
-"use client";
 import { Box, Container, Typography, Avatar, Grid } from "@mui/material";
 import { Download as DownloadIcon } from "@mui/icons-material";
-import LoginIcon from "@mui/icons-material/Login";
-import creator from "./yo.jpg";
 import { CustomButton, CustomModal } from "@/components";
+import LoginIcon from "@mui/icons-material/Login";
 import { useState } from "react";
+import creator from "./yo.jpg";
 
 export type HeroSectionProps = {
   isMobile: boolean;
