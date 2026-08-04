@@ -18,10 +18,9 @@ const skillSets = [
   {
     category: "Lenguajes Dominados",
     skills: [
-      { name: "JavaScript", level: 100 },
-      { name: "TypeScript", level: 100 },
-      { name: "Python", level: 90 },
-      { name: "PHP", level: 85 },
+      { name: "JavaScript / TypeScript", level: 100 },
+      { name: "Jupyter", level: 100 },
+      { name: "Python", level: 100 },
     ],
   },
   {
@@ -34,8 +33,8 @@ const skillSets = [
   {
     category: "Bases de datos",
     skills: [
-      { name: "SQL Server", level: 90 },
-      { name: "MySQL", level: 90 },
+      { name: "PostgreSQL", level: 100 },
+      { name: "SQL / MySQL", level: 100 },
       { name: "Firebase", level: 90 },
       { name: "MongoDB", level: 70 },
     ],
@@ -44,13 +43,16 @@ const skillSets = [
 
 const technologies = [
   "React",
+  "React Native",
   "Next.js",
-  "Vue.js",
   "Node.js",
   "Express",
-  "Material UI",
+  "Django",
+  "PostgreSQL",
   "Tailwind CSS",
+  "Material UI",
   "Git",
+  "Docker",
 ];
 
 export type ExpertiseSectionProps = {

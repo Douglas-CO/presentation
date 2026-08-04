@@ -11,9 +11,9 @@ import Header from "./components/Header";
 import { useTheme } from "./hooks/useTheme";
 import HeroSection from "./components/HeroSection";
 import AboutSection from "./components/AboutSection";
-import VisionSection from "./components/VisionSection";
 import ConnectSection from "./components/ConnectSection";
 import ExpertiseSection from "./components/ExpertiseSection";
+import DrawerSection from "./components/DrawerSection";
 
 export type PageProps = {
   isMobile: boolean;
@@ -34,6 +34,7 @@ const Page: React.FC<PageProps> = ({ isMobile }) => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
+      <DrawerSection />
       <Box sx={{ minHeight: "100vh" }}>
         <Header
           currentTheme={currentTheme}
@@ -43,7 +44,9 @@ const Page: React.FC<PageProps> = ({ isMobile }) => {
         <HeroSection isMobile={isMobile} />
         <AboutSection isMobile={isMobile} />
         <ExpertiseSection isMobile={isMobile} />
+        {/*
         <VisionSection isMobile={isMobile} />
+         */}
         <ConnectSection isMobile={isMobile} />
       </Box>
     </ThemeProvider>

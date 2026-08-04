@@ -11,6 +11,7 @@ import {
 } from "@mui/material";
 import { Download as DownloadIcon } from "@mui/icons-material";
 import creator from "../img/yo.jpg";
+import cvCreator from "../pdfs/CV Douglas Coronado.pdf";
 
 export type HeroSectionProps = {
   isMobile: boolean;
@@ -113,7 +114,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ isMobile }) => {
               <Box
                 sx={{
                   display: "flex",
-                  justifyContent: isMobile ? null : "center", // 👈 Centra horizontalmente
+                  justifyContent: isMobile ? null : "center",
                   gap: 3,
                   flexWrap: "wrap",
                 }}
@@ -123,11 +124,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ isMobile }) => {
                   size="large"
                   startIcon={<DownloadIcon />}
                   onClick={() =>
-                    window.open(
-                      "https://firebasestorage.googleapis.com/v0/b/douglascoronado-d21f5.appspot.com/o/Curriculum%2FDouglas%20Coronado%20CV%202025.pdf?alt=media&token=85ba5cac-2a6a-4b7e-a4d0-49b5f1270e50",
-                      "_blank",
-                      "noopener,noreferrer"
-                    )
+                    window.open(cvCreator, "_blank", "noopener,noreferrer")
                   }
                   sx={{
                     backgroundColor: "primary.main",

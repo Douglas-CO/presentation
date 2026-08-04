@@ -7,13 +7,11 @@ import {
   Card,
   Container,
   Typography,
-  CardContent,
   IconButton,
+  CardContent,
 } from "@mui/material";
 import {
   Group as TeamIcon,
-  Favorite as HeartIcon,
-  TrendingUp as GrowthIcon,
   QuestionAnswer as QuestionIcon,
 } from "@mui/icons-material";
 import { useState } from "react";
@@ -25,24 +23,14 @@ export type AboutSectionProps = {
 
 const values = [
   {
-    title: "Empático",
-    description: "Trato cordial y comprensivo con cada persona",
-    icon: <HeartIcon />,
-  },
-  {
     title: "Colaborativo",
-    description: "Excelencia en trabajo en equipo y comunicación",
+    description: "Bueno trabajando en equipo, repartiendo roles y tareas para el desarrollo de proyectos.",
     icon: <TeamIcon />,
   },
   {
-    title: "Curioso",
-    description: "Siempre pregunto para optimizar y mejorar",
+    title: "Comunicativo",
+    description: "Capacidad para expresar ideas de forma clara y mantener una comunicación efectiva con el equipo.",
     icon: <QuestionIcon />,
-  },
-  {
-    title: "Ambicioso",
-    description: "Visión clara hacia el crecimiento profesional",
-    icon: <GrowthIcon />,
   },
 ];
 
@@ -91,9 +79,8 @@ const AboutSection: React.FC<AboutSectionProps> = ({ isMobile }) => {
             >
               Soy un profesional apasionado por la tecnología, con una sólida
               formación en ingeniería de software y experiencia práctica en
-              desarrollo Full Stack. Mi enfoque actual está en el Frontend, pero
-              mi visión se extiende hacia el futuro de la inteligencia
-              artificial, ciencia de datos y cyberseguridad.
+              desarrollo Full Stack. Mi enfoque actual está en el Frontend y Backend,
+              pero mi visión se extiende hacia la ciencia de datos y cyberseguridad.
             </Typography>
           </Grid>
 

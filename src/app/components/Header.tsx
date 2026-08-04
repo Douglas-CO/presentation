@@ -11,10 +11,11 @@ import {
   IconButton,
   Menu,
   MenuItem,
-  Avatar,
 } from "@mui/material";
 import { Palette as PaletteIcon } from "@mui/icons-material";
 import type { ThemeMode } from "../hooks/useTheme";
+import { useDrawerStore } from "@/store";
+import { MenuIcon } from "lucide-react";
 
 export type HeaderProps = {
   currentTheme: ThemeMode;
@@ -28,6 +29,7 @@ const Header: React.FC<HeaderProps> = ({
   isMobile,
 }) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const { openDrawer, setOpenDrawer } = useDrawerStore();
 
   const handleThemeMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
@@ -72,19 +74,19 @@ const Header: React.FC<HeaderProps> = ({
             },
           }}
         >
-          <Avatar
-            sx={{
-              width: 40,
-              height: 40,
-              mr: 2,
-              backgroundColor: "primary.main",
-              color: "white",
-              fontSize: "1.2rem",
-              fontWeight: 600,
-            }}
+          <IconButton
+            aria-label="open drawer"
+            onClick={() => setOpenDrawer(true)}
+            edge="start"
+            sx={[
+              {
+                mr: 2,
+              },
+              openDrawer && { display: "none" },
+            ]}
           >
-            D
-          </Avatar>
+            <MenuIcon />
+          </IconButton>
           <Typography
             variant="h6"
             sx={{
@@ -137,7 +139,7 @@ const Header: React.FC<HeaderProps> = ({
             </Button>
             <Button
               color="inherit"
-              href="#vision"
+              href="#contacto"
               sx={{
                 color: "text.primary",
                 fontWeight: 500,
@@ -146,7 +148,7 @@ const Header: React.FC<HeaderProps> = ({
                 },
               }}
             >
-              VISION
+              CONTACTO
             </Button>
             <IconButton
               onClick={handleThemeMenuOpen}

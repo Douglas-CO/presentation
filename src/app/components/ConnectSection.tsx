@@ -53,6 +53,7 @@ const ConnectSection: React.FC<ConnectSectionProps> = ({ isMobile }) => {
 
   return (
     <Box
+      id="contacto"
       sx={{
         py: 12,
         backgroundColor: "background.default",
